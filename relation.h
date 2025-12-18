@@ -27,7 +27,8 @@ void deleteAfterRelasi(listRelasi &L, adrRelasi Prec, adrRelasi &R);
 
 void showPenumpangDariBis(listRelasi L, adrBis P);
 void showBisDariPenumpang(listRelasi L, adrPenumpang C);
-void showAllRelasi(listRelasi L);
+void showRelasiBisKePenumpang(listBis LB, listRelasi LR);
+void showRelasiPenumpangKeBis(listPenumpang LP, listRelasi LR);
 
 adrRelasi findRelasiByBis(listRelasi L, adrBis P);
 adrRelasi findRelasiByPenumpang(listRelasi L, adrPenumpang C);
