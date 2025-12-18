@@ -63,7 +63,7 @@ void showPenumpang(listPenumpang L){
     while(P != nullptr){
         cout << "Nama   : " << P->info.nama << endl;
         cout << "Tujuan : " << P->info.tujuan << endl;
-        cout << "------------------" << endl;
+        cout << endl;
         P = P->next;
     }
 }
