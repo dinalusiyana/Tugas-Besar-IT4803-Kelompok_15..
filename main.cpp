@@ -43,7 +43,7 @@ int main(){
 }
 void initDummyData(listBis &LB, listPenumpang &LP, listRelasi &LR){
 
-    /* ===== DUMMY BIS ===== */
+    /* ================= DUMMY BIS ================= */
     Bis b1 = {"Bis_A", "Bandung", 2};
     Bis b2 = {"Bis_B", "Bandung", 3};
     Bis b3 = {"Bis_C", "Jakarta", 2};
@@ -59,37 +59,38 @@ void initDummyData(listBis &LB, listPenumpang &LP, listRelasi &LR){
     insertLast(LB, B3);
     insertLast(LB, B4);
 
-    /* ===== DUMMY PENUMPANG ===== */
+    /* ================= DUMMY PENUMPANG ================= */
     Penumpang p1 = {"Asep", "Bandung"};
     Penumpang p2 = {"Budi", "Bandung"};
     Penumpang p3 = {"Cecep", "Jakarta"};
     Penumpang p4 = {"Udin", "Surabaya"};
-    Penumpang p5 = {"neneng", "Bandung"};
+    Penumpang p5 = {"Neneng", "Bandung"};
+    Penumpang p6 = {"Beben", "Jakarta"};
 
     adrPenumpang P1 = createElmPenumpang(p1);
     adrPenumpang P2 = createElmPenumpang(p2);
     adrPenumpang P3 = createElmPenumpang(p3);
     adrPenumpang P4 = createElmPenumpang(p4);
     adrPenumpang P5 = createElmPenumpang(p5);
+    adrPenumpang P6 = createElmPenumpang(p6);
 
     insertLastPenumpang(LP, P1);
     insertLastPenumpang(LP, P2);
     insertLastPenumpang(LP, P3);
     insertLastPenumpang(LP, P4);
     insertLastPenumpang(LP, P5);
+    insertLastPenumpang(LP, P6);
 
-    /* ===== DUMMY RELASI (VALID & SESUAI ATURAN) ===== */
+    /* ================= DUMMY RELASI ================= */
     // Bandung
-    insertLastRelasi(LR, createElmRelasi(B1, P1));
-    insertLastRelasi(LR, createElmRelasi(B1, P2));
+    insertLastRelasi(LR, createElmRelasi(B1, P1)); // Andi -> BisA
+    insertLastRelasi(LR, createElmRelasi(B1, P2)); // Budi -> BisA
+    insertLastRelasi(LR, createElmRelasi(B2, P5)); // Eko  -> BisB
 
     // Jakarta
-    insertLastRelasi(LR, createElmRelasi(B3, P3));
+    insertLastRelasi(LR, createElmRelasi(B3, P3)); // Cici -> BisC
+    insertLastRelasi(LR, createElmRelasi(B3, P6)); // Fina -> BisC
 
     // Surabaya
-    insertLastRelasi(LR, createElmRelasi(B4, P4));
-
-    // Bandung (Bis lain)
-    insertLastRelasi(LR, createElmRelasi(B2, P5));
+    insertLastRelasi(LR, createElmRelasi(B4, P4)); // Dina -> BisD
 }
-
