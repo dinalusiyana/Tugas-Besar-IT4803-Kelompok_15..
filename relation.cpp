@@ -145,12 +145,70 @@ void showBisDariPenumpang(listRelasi L, adrPenumpang C){
     }
 }
 
-void showAllRelasi(listRelasi L){
-    adrRelasi R = L.first;
-    while(R != nullptr){
-        cout << "[Bis: " << R->parent->info.namaBis
-             << " -> Penumpang: " << R->child->info.nama << "]\n";
-        R = R->next;
+void showRelasiBisKePenumpang(listBis LB, listRelasi LR){
+    adrBis B = LB.first;
+
+    while(B != nullptr){
+        cout << "========================================\n";
+        cout << "Bis        : " << B->info.namaBis << endl;
+        cout << "Rute       : " << B->info.rute << endl;
+        cout << "Kapasitas  : " << B->info.kapasitas << endl;
+        cout << "----------------------------------------\n";
+
+        adrRelasi R = LR.first;
+        int no = 1;
+        bool ada = false;
+
+        while(R != nullptr){
+            if(R->parent == B){
+                cout << no++ << ". "
+                     << R->child->info.nama
+                     << " | Tujuan: "
+                     << R->child->info.tujuan << endl;
+                ada = true;
+            }
+            R = R->next;
+        }
+
+        if(!ada){
+            cout << "(Tidak ada penumpang)\n";
+        }
+
+        cout << "========================================\n\n";
+        B = B->next;
+    }
+}
+
+void showRelasiPenumpangKeBis(listPenumpang LP, listRelasi LR){
+    adrPenumpang P = LP.first;
+
+    while(P != nullptr){
+        cout << "========================================\n";
+        cout << "Penumpang  : " << P->info.nama << endl;
+        cout << "Tujuan     : " << P->info.tujuan << endl;
+        cout << "----------------------------------------\n";
+
+        adrRelasi R = LR.first;
+        bool ada = false;
+
+        while(R != nullptr){
+            if(R->child == P){
+                cout << "Bis        : "
+                     << R->parent->info.namaBis << endl;
+                cout << "Rute       : "
+                     << R->parent->info.rute << endl;
+                ada = true;
+                break;
+            }
+            R = R->next;
+        }
+
+        if(!ada){
+            cout << "(Belum naik bis)\n";
+        }
+
+        cout << "========================================\n\n";
+        P = P->next;
     }
 }
 
