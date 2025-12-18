@@ -12,4 +12,6 @@ void menuBis(listBis &LB);
 void menuPenumpang(listPenumpang &LP);
 void menuRelasi(listBis &LB, listPenumpang &LP, listRelasi &LR);
 
+void initDummyData(listBis &LB, listPenumpang &LP, listRelasi &LR);
+
 #endif
