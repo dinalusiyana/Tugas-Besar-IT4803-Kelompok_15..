@@ -221,13 +221,14 @@ void menuRelasi(listBis &LB, listPenumpang &LP, listRelasi &LR){
         cout << "7. Edit Relasi\n";
         cout << "8. Find Relasi by Bis\n";
         cout << "9. Find Relasi by Penumpang\n";
-        cout << "10. Show All Relasi\n";
-        cout << "11. Show Penumpang dari Bis\n";
-        cout << "12. Show Bis dari Penumpang\n";
-        cout << "13. Count Penumpang dari Bis\n";
-        cout << "14. Count Bis dari Penumpang\n";
-        cout << "15. Count Bis tanpa Penumpang\n";
-        cout << "16. Count Penumpang tanpa Bis\n";
+        cout << "10. Show Relasi Bis ke Penumpang\n";
+        cout << "11. Show Relasi Penumpang ke Bis\n";
+        cout << "12. Show Penumpang dari Bis\n";
+        cout << "13. Show Bis dari Penumpang\n";
+        cout << "14. Count Penumpang dari Bis\n";
+        cout << "15. Count Bis dari Penumpang\n";
+        cout << "16. Count Bis tanpa Penumpang\n";
+        cout << "17. Count Penumpang tanpa Bis\n";
         cout << "0. Back\n";
         cout << "Pilih: ";
         cin >> pilih;
@@ -399,42 +400,46 @@ void menuRelasi(listBis &LB, listPenumpang &LP, listRelasi &LR){
         }
 
         /* ================= SHOW & COUNT ================= */
-        else if(pilih == 10){
-            showAllRelasi(LR);
+       else if(pilih == 10){
+            showRelasiBisKePenumpang(LB, LR);
             system("pause");
         }
         else if(pilih == 11){
+            showRelasiPenumpangKeBis(LP, LR);
+            system("pause");
+        }
+        else if(pilih == 12){
             string nb;
             cout << "Nama Bis: "; cin >> nb;
             showPenumpangDariBis(LR, findBis(LB, nb));
             system("pause");
         }
-        else if(pilih == 12){
+        else if(pilih == 13){
             string np;
             cout << "Nama Penumpang: "; cin >> np;
             showBisDariPenumpang(LR, findPenumpang(LP, np));
             system("pause");
         }
-        else if(pilih == 13){
+        else if(pilih == 14){
             string nb;
             cout << "Nama Bis: "; cin >> nb;
             cout << "Jumlah Penumpang: "
                  << countPenumpangDariBis(LR, findBis(LB, nb)) << endl;
             system("pause");
         }
-        else if(pilih == 14){
+        else if(pilih == 15){
             string np;
             cout << "Nama Penumpang: "; cin >> np;
             cout << "Jumlah Bis: "
                  << countBisDariPenumpang(LR, findPenumpang(LP, np)) << endl;
             system("pause");
         }
-        else if(pilih == 15){
+        else if(pilih == 16){
             cout << "Bis tanpa penumpang: "
                  << countBisTanpaPenumpang(LR, LB) << endl;
             system("pause");
         }
-        else if(pilih == 16){
+        else if(pilih == 17){
             cout << "Penumpang tanpa bis: "
                  << countPenumpangTanpaBis(LR, LP) << endl;
             system("pause");
