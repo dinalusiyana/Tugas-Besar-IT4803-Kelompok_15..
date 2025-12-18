@@ -55,7 +55,7 @@ void showAllBis(listBis L){
         cout << "Nama Bis  : " << P->info.namaBis << endl;
         cout << "Rute      : " << P->info.rute << endl;
         cout << "Kapasitas : " << P->info.kapasitas << endl;
-        cout << "------------------" << endl;
+        cout << endl;
         P = P->next;
     }
 }
