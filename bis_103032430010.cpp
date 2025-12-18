@@ -2,7 +2,6 @@
 #include "bis.h"
 using namespace std;
 
-
 void createList(listBis &L){
     L.first = nullptr;
 }
@@ -36,3 +35,4 @@ void insertAfter(listBis &L, adrBis Prec, adrBis P){
         Prec->next = P;
     }
 }
+
