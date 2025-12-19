@@ -225,10 +225,10 @@ void menuRelasi(listBis &LB, listPenumpang &LP, listRelasi &LR){
         cout << "11. Show Relasi Penumpang ke Bis\n";
         cout << "12. Show Penumpang dari Bis\n";
         cout << "13. Show Bis dari Penumpang\n";
-        cout << "14. Count Penumpang dari Bis\n";
-        cout << "15. Count Bis dari Penumpang\n";
-        cout << "16. Count Bis tanpa Penumpang\n";
-        cout << "17. Count Penumpang tanpa Bis\n";
+        cout << "14. Jumlah Penumpang dalam satu Bis\n";
+        cout << "15. Jumlah Bis yang dinaiki Penumpang\n";
+        cout << "16. Bis yang Belum Punya Penumpang\n";
+        cout << "17. Penumpang yang Belum Naik Bis\n";
         cout << "0. Back\n";
         cout << "Pilih: ";
         cin >> pilih;
